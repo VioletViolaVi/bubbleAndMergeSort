@@ -5,13 +5,14 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        // Bubble Sort
+        /* Bubble Sort */
+
         // empty arraylist of integers
         ArrayList<Integer> allNumbers = new ArrayList<>();
         // random numbers
-        Random random = new Random();
+        Random bubbleRandom = new Random();
         for(int i = 0; i < 8; i++){
-            BubbleSort bubbleSort = new BubbleSort(random.nextInt(101));
+            BubbleSort bubbleSort = new BubbleSort(bubbleRandom.nextInt(101));
             allNumbers.add(bubbleSort.getAnyNum());
         }
         // calls the sorting method made to show the final (sorted) answer
@@ -19,15 +20,24 @@ public class Main {
 
         System.out.println("\n");
 
-        // Merge Sort
-        int array[] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        /* Merge Sort */
 
+        // generate 10 random ints for merge sorting
+        Random mergeRand = new Random();
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = mergeRand.nextInt(101);
+        }
+
+        // print before merge sorting
         System.out.println("Before merge sorting: ");
         MergeSort.printArray(array);
 
+        // invoke merge sorting
         MergeSort mergeSort = new MergeSort();
         mergeSort.sort(array, 0, array.length - 1);
 
+        // print after merge sorting
         System.out.println("\nAfter merge sorting: ");
         MergeSort.printArray(array);
     }

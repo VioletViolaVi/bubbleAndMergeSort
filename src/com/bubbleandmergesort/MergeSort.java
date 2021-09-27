@@ -55,8 +55,7 @@ public class MergeSort {
     }
 
     // main function that sorts array[firstNum...rightNum] using mergeSorter()
-    public void sort(int array[], int firstNum, int rightNum)
-    {
+    public void sort(int array[], int firstNum, int rightNum) {
         if (firstNum < rightNum) {
             // find middle point
             int middlePoint = firstNum + (rightNum - firstNum) / 2;
