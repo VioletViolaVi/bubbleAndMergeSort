@@ -1,10 +1,12 @@
 package com.bubbleandmergesort;
 
+import java.util.Random;
+
 public class MergeSort {
     // merge 2 sub arrays from array[]
     // 1st sub array is array[firstNum...middleNum]
     // 2nd sub array is array[middleNum+1...rightNum]
-    public void mergeSorter(int array[], int firstNum, int middleNum, int rightNum) {
+    public static void mergeSorter(int array[], int firstNum, int middleNum, int rightNum) {
         // find sizes of 2 sub arrays to be merged
         int arraySize1 = middleNum - firstNum + 1;
         int arraySize2 = rightNum - middleNum;
@@ -55,7 +57,7 @@ public class MergeSort {
     }
 
     // main function that sorts array[firstNum...rightNum] using mergeSorter()
-    public void sort(int array[], int firstNum, int rightNum) {
+    public static void sort(int array[], int firstNum, int rightNum) {
         if (firstNum < rightNum) {
             // find middle point
             int middlePoint = firstNum + (rightNum - firstNum) / 2;
@@ -75,5 +77,25 @@ public class MergeSort {
         for (int i = 0; i < arraySize; i++) {
             System.out.print(array[i] + ", ");
         }
+    }
+
+    public static void generateRandomArrayOfInts(){
+        // generate 10 random ints for merge sorting
+        Random mergeRand = new Random();
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = mergeRand.nextInt(101);
+        }
+
+        // print before merge sorting
+        System.out.println("Before merge sorting: ");
+        printArray(array);
+
+        // invoke merge sorting
+        sort(array, 0, array.length - 1);
+
+        // print after merge sorting
+        System.out.println("\nAfter merge sorting: ");
+        printArray(array);
     }
 }

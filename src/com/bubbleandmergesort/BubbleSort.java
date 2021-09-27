@@ -1,6 +1,7 @@
 package com.bubbleandmergesort;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BubbleSort {
     private int anyNum;
@@ -11,6 +12,19 @@ public class BubbleSort {
 
     public int getAnyNum() {
         return anyNum;
+    }
+
+    public static void generateRandArrayOfNums(){
+        // empty arraylist of integers
+        ArrayList<Integer> allNumbers = new ArrayList<>();
+        // random numbers
+        Random bubbleRandom = new Random();
+        for(int i = 0; i < 8; i++){
+            BubbleSort bubbleSort = new BubbleSort(bubbleRandom.nextInt(101));
+            allNumbers.add(bubbleSort.getAnyNum());
+        }
+        // calls the sorting method made to show the final (sorted) answer
+        BubbleSort.bubbleSorter(allNumbers);
     }
 
     public static void bubbleSorter(ArrayList<Integer> intArray) {
