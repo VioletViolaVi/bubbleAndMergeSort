@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bubble&amp;MergeSort.iml" filepath="$PROJECT_DIR$/Bubble&amp;MergeSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BubbleAndMergeSort.iml" filepath="$PROJECT_DIR$/BubbleAndMergeSort.iml" />
     </modules>
   </component>
 </project>
